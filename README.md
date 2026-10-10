@@ -386,7 +386,7 @@
           <div class="info-col">
             <div class="info-row">
               <span class="info-key">Package</span>
-              <span class="info-val">com.nepalicoder</span>
+              <span class="info-val">com.milenniumapps</span>
             </div>
             <div class="info-row">
               <span class="info-key">Platform</span>
@@ -401,14 +401,14 @@
 
         <div class="app-actions">
           <a class="btn btn-primary"
-             href="https://play.google.com/store/apps/details?id=com.nepalicoder"
+             href="https://play.google.com/store/apps/details?id=com.milenniumapps"
              target="_blank" rel="noopener">
             <!-- Play icon -->
             <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 2.5l10 5.5-10 5.5V2.5z"/></svg>
             Open on Play Store
           </a>
           <a class="btn btn-secondary"
-             href="https://play.google.com/store/apps/details?id=com.nepalicoder"
+             href="https://play.google.com/store/apps/details?id=com.milenniumapps"
              target="_blank" rel="noopener">
             <!-- Download icon -->
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -441,7 +441,7 @@
             </div>
           </div>
           <div class="info-col">
-            <div class="info-row"><span class="info-key">Package</span><span class="info-val">com.nepalicoder.appname</span></div>
+            <div class="info-row"><span class="info-key">Package</span><span class="info-val">com.milenniumapps.appname</span></div>
             <div class="info-row"><span class="info-key">Platform</span><span class="info-val">Android (Google Play)</span></div>
           </div>
         </div>
@@ -470,7 +470,7 @@
 
   <script>
     new QRCode(document.getElementById("qr-bible"), {
-      text: "https://play.google.com/store/apps/details?id=com.nepalicoder",
+      text: "https://play.google.com/store/apps/details?id=com.milenniumapps",
       width: 120,
       height: 120,
       colorDark: "#1A1714",
