@@ -465,7 +465,7 @@
   
   
   <footer>
-    Built by <a href="https://play.google.com/store/apps/dev?id=com.nepalicoder" target="_blank" rel="noopener">NepaliCoder</a> &mdash; independent Android developer
+    Built by <a href="https://play.google.com/store/apps/dev?id=com.millenniumapps" target="_blank" rel="noopener">Millenniumapps</a> &mdash; independent Android developer
   </footer>
 
   <script>
