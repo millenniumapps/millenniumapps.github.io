@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Milenniumapps</title>
+  <meta name="description" content="Milenniumapps makes simple, focused apps: VidOne and Holy Bible KJV." />
+  <link rel="icon" href="vidone/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F6F7F9;
+      --surface: #FFFFFF;
+      --text: #111318;
+      --muted: #5F6470;
+      --border: #E3E5EA;
+      --accent: #1A5CFF;
+      --accent-text: #FFFFFF;
+      --chip: #EEF0F4;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0E0F12;
+        --surface: #17191D;
+        --text: #F1F2F4;
+        --muted: #9AA0AB;
+        --border: #2A2D33;
+        --accent: #5B8CFF;
+        --accent-text: #0E0F12;
+        --chip: #22252B;
+      }
+    }
+
+    body {
+      font-family: "Google Sans Flex", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+    header { padding: 22px 0; border-bottom: 1px solid var(--border); background: var(--surface); }
+    header .wrap { display: flex; align-items: center; justify-content: space-between; }
+    .brand { font-weight: 700; font-size: 19px; letter-spacing: -0.01em; text-decoration: none; }
+    header nav a { color: var(--muted); text-decoration: none; font-size: 15px; margin-left: 20px; }
+    header nav a:hover { color: var(--text); }
+
+    .hero { padding: 72px 0 48px; }
+    .hero h1 { font-size: clamp(32px, 5vw, 48px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.12; max-width: 680px; }
+    .hero p { margin-top: 16px; font-size: 18px; color: var(--muted); max-width: 560px; }
+
+    .apps { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 20px; padding-bottom: 72px; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .card-head { display: flex; gap: 16px; align-items: center; }
+    .icon { width: 64px; height: 64px; border-radius: 16px; flex-shrink: 0; overflow: hidden; }
+    .icon img, .icon svg { width: 100%; height: 100%; display: block; }
+    .card h2 { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; }
+    .card .sub { color: var(--muted); font-size: 14px; }
+    .card p { color: var(--muted); font-size: 16px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { background: var(--chip); border-radius: 999px; padding: 4px 12px; font-size: 13px; font-weight: 500; }
+
+    .card-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-top: auto; }
+    .actions { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent); color: var(--accent-text);
+      text-decoration: none; font-weight: 500; font-size: 15px;
+      padding: 11px 20px; border-radius: 999px;
+    }
+    .btn svg { width: 16px; height: 16px; }
+    .link { font-size: 14px; color: var(--muted); }
+    .qr { background: #fff; padding: 8px; border-radius: 12px; border: 1px solid var(--border); }
+    .qr img, .qr canvas { display: block; }
+
+    footer { border-top: 1px solid var(--border); padding: 28px 0; color: var(--muted); font-size: 14px; }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; }
+    footer a { color: var(--muted); overflow-wrap: anywhere; }
+
+    @media (max-width: 560px) {
+      .hero { padding: 48px 0 32px; }
+      .apps { grid-template-columns: 1fr; }
+      .card { padding: 22px; }
+      .qr { display: none; }
+      header nav a { margin-left: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap">
+      <a class="brand" href="/">Milenniumapps</a>
+      <nav>
+        <a href="#apps">Apps</a>
+        <a href="mailto:feedbackonapps@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Simple, focused apps that respect your time.</h1>
+      <p>Milenniumapps is an independent developer making clean, well-crafted apps for everyday use.</p>
+    </section>
+
+    <section class="apps" id="apps">
+
+      <article class="card">
+        <div class="card-head">
+          <div class="icon"><img src="vidone/icon.png" alt="VidOne icon" /></div>
+          <div>
+            <h2>VidOne</h2>
+            <div class="sub">Video browser</div>
+          </div>
+        </div>
+        <p>Watch videos from any site with background play, picture-in-picture, Chromecast, downloads and a built-in ad blocker.</p>
+        <div class="chips">
+          <span class="chip">Free</span>
+          <span class="chip">Android</span>
+          <span class="chip">Ad blocker</span>
+          <span class="chip">Chromecast</span>
+        </div>
+        <div class="card-foot">
+          <div class="actions">
+            <a class="btn" href="https://play.google.com/store/apps/details?id=com.millenniumapps.vidone" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 2.5l10 5.5-10 5.5V2.5z"/></svg>
+              Get it on Google Play
+            </a>
+            <a class="link" href="vidone/privacy-policy.html">Privacy policy</a>
+          </div>
+          <div class="qr" id="qr-vidone"></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <div class="icon">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-label="Holy Bible KJV icon">
+              <rect width="64" height="64" fill="#1D4E2A"/>
+              <rect x="18" y="12" width="28" height="40" rx="3" fill="#F7F4EE"/>
+              <rect x="18" y="12" width="5" height="40" rx="2" fill="#D9D2C3"/>
+              <path d="M34 20v14M28 25h12" stroke="#1D4E2A" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <h2>Holy Bible KJV</h2>
+            <div class="sub">Bible reader</div>
+          </div>
+        </div>
+        <p>The complete King James Version. Read, search, bookmark and highlight scripture, all offline.</p>
+        <div class="chips">
+          <span class="chip">Free</span>
+          <span class="chip">Android</span>
+          <span class="chip">Offline</span>
+          <span class="chip">Daily verse</span>
+        </div>
+        <div class="card-foot">
+          <div class="actions">
+            <a class="btn" href="https://play.google.com/store/apps/details?id=com.milenniumapps" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 2.5l10 5.5-10 5.5V2.5z"/></svg>
+              Get it on Google Play
+            </a>
+            <a class="link" href="biblekjv/privacy-policy.html">Privacy policy</a>
+          </div>
+          <div class="qr" id="qr-bible"></div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>&copy; 2026 Milenniumapps</span>
+      <span>
+        <a href="vidone/privacy-policy.html">VidOne privacy</a> &middot;
+        <a href="biblekjv/privacy-policy.html">Bible KJV privacy</a> &middot;
+        <a href="mailto:feedbackonapps@gmail.com">feedbackonapps@gmail.com</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    [["qr-vidone", "com.millenniumapps.vidone"], ["qr-bible", "com.milenniumapps"]].forEach(([id, pkg]) => {
+      new QRCode(document.getElementById(id), {
+        text: "https://play.google.com/store/apps/details?id=" + pkg,
+        width: 88, height: 88, colorDark: "#111318", colorLight: "#FFFFFF",
+        correctLevel: QRCode.CorrectLevel.M
+      });
+    });
+  </script>
+</body>
+</html>
