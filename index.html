@@ -5,11 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Milenniumapps | Free Android Apps</title>
   <meta name="description" content="Milenniumapps builds free, focused Android apps, including VidOne background video player and Holy Bible KJV offline. Get them on Google Play." />
+  <link rel="canonical" href="https://millenniumapps.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Milenniumapps" />
+  <meta property="og:title" content="Milenniumapps | Free Android Apps" />
+  <meta property="og:description" content="Milenniumapps builds free, focused Android apps, including VidOne background video player and Holy Bible KJV offline. Get them on Google Play." />
+  <meta property="og:url" content="https://millenniumapps.github.io/" />
+  <meta property="og:image" content="https://millenniumapps.github.io/vidone/icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <script type="application/ld+json">
+  [
+    {"@context": "https://schema.org", "@type": "MobileApplication", "name": "VidOne: Background Player",
+     "operatingSystem": "ANDROID", "applicationCategory": "VideoApplication",
+     "description": "Background video player and private web browser with picture-in-picture, Chromecast and built-in ad and tracker blocking.",
+     "url": "https://play.google.com/store/apps/details?id=com.millenniumapps.vidone",
+     "image": "https://millenniumapps.github.io/vidone/icon.png", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+     "author": {"@type": "Organization", "name": "Milenniumapps", "url": "https://millenniumapps.github.io/"}},
+    {"@context": "https://schema.org", "@type": "MobileApplication", "name": "Holy Bible KJV",
+     "operatingSystem": "ANDROID", "applicationCategory": "BookApplication",
+     "description": "The complete King James Bible to read offline, with search, bookmarks, highlights, notes and a daily verse.",
+     "url": "https://play.google.com/store/apps/details?id=com.nepalicoder",
+     "image": "https://millenniumapps.github.io/biblekjv/icon.png", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+     "author": {"@type": "Organization", "name": "Milenniumapps", "url": "https://millenniumapps.github.io/"}}
+  ]
+  </script>
   <link rel="icon" href="vidone/icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;700&display=swap" rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -114,7 +138,7 @@
 
       <article class="card">
         <div class="card-head">
-          <div class="icon"><img src="vidone/icon.png" alt="VidOne icon" /></div>
+          <div class="icon"><img src="vidone/icon.webp" alt="VidOne icon" width="64" height="64" /></div>
           <div>
             <h2>VidOne</h2>
             <div class="sub">Background video player</div>
@@ -131,6 +155,7 @@
           <div class="actions">
             <a class="play" href="https://play.google.com/store/apps/details?id=com.millenniumapps.vidone" target="_blank" rel="noopener"><img src="google-play-badge.png" alt="Get it on Google Play" /></a>
             <a class="link" href="vidone/privacy-policy.html">Privacy policy</a>
+            <a class="link" href="vidone/terms.html">Terms</a>
           </div>
           <div class="qr" id="qr-vidone"></div>
         </div>
@@ -138,7 +163,7 @@
 
       <article class="card">
         <div class="card-head">
-          <div class="icon"><img src="biblekjv/icon.png" alt="Holy Bible KJV icon" /></div>
+          <div class="icon"><img src="biblekjv/icon.png" alt="Holy Bible KJV icon" width="64" height="64" /></div>
           <div>
             <h2>Holy Bible KJV</h2>
             <div class="sub">Bible reader</div>
@@ -155,6 +180,7 @@
           <div class="actions">
             <a class="play" href="https://play.google.com/store/apps/details?id=com.nepalicoder" target="_blank" rel="noopener"><img src="google-play-badge.png" alt="Get it on Google Play" /></a>
             <a class="link" href="biblekjv/privacy-policy.html">Privacy policy</a>
+            <a class="link" href="biblekjv/terms.html">Terms</a>
           </div>
           <div class="qr" id="qr-bible"></div>
         </div>
@@ -175,13 +201,14 @@
   </footer>
 
   <script>
-    [["qr-vidone", "com.millenniumapps.vidone"], ["qr-bible", "com.nepalicoder"]].forEach(([id, pkg]) => {
+    // QRCode loads deferred, so wait for it
+    document.addEventListener("DOMContentLoaded", () => [["qr-vidone", "com.millenniumapps.vidone"], ["qr-bible", "com.nepalicoder"]].forEach(([id, pkg]) => {
       new QRCode(document.getElementById(id), {
         text: "https://play.google.com/store/apps/details?id=" + pkg,
         width: 88, height: 88, colorDark: "#111318", colorLight: "#FFFFFF",
         correctLevel: QRCode.CorrectLevel.M
       });
-    });
+    }));
   </script>
 </body>
 </html>
