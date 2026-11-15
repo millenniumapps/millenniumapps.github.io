@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy – VidOne Ad Blocker</title>
+<meta name="description" content="Privacy policy for the VidOne Ad Blocker browser extension. It collects no personal data and sends nothing about you anywhere.">
+<link rel="canonical" href="https://millenniumapps.github.io/vidone-extension/privacy-policy.html">
+<style>
+  :root { color-scheme: light dark; --text: #1a1b1e; --dim: #5b6068; --bg: #ffffff; --line: #e4e5e8; --accent: #e00000; --box: #f6f6f7; }
+  @media (prefers-color-scheme: dark) {
+    :root { --text: #f2eee6; --dim: #9aa0a8; --bg: #0f1012; --line: #272a2f; --accent: #ff3b3b; --box: #17191c; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 56px 24px 80px; }
+  h1 { font-size: 2.1rem; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 8px; }
+  h2 { font-size: 1.2rem; margin: 40px 0 8px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .date { color: var(--dim); margin: 0 0 28px; }
+  .summary { background: var(--box); border-left: 4px solid var(--accent); border-radius: 8px; padding: 16px 20px; }
+  .summary p { margin: 0; }
+  ul { padding-left: 1.3em; }
+  li { margin: 6px 0; }
+  code { font: 0.88em ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--box); padding: 1px 5px; border-radius: 4px; }
+  a { color: var(--accent); }
+  footer { margin-top: 48px; color: var(--dim); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Privacy Policy</h1>
+  <p class="date">VidOne Ad Blocker browser extension · Effective November 15, 2026</p>
+
+  <div class="summary">
+    <p><strong>In short:</strong> VidOne Ad Blocker does not collect, store or share any personal data. It has no account, no analytics and no tracking. Everything it saves stays in your browser.</p>
+  </div>
+
+  <h2>Data we collect</h2>
+  <p>None. The extension does not collect, transmit, sell or share personal information, browsing history, page content, search terms, IP addresses or any other data about you. We have no servers that receive data from the extension.</p>
+
+  <h2>Data stored on your device</h2>
+  <p>The extension saves a small amount of data in your browser's local extension storage (<code>chrome.storage.local</code>). This data never leaves your device and is not synced:</p>
+  <ul>
+    <li>Whether the "Block ads" switch is on or off.</li>
+    <li>The number of YouTube ads blocked and skipped, shown in the popup.</li>
+    <li>The ad-hiding rules built from the filter lists, and the version and date of the last filter list update.</li>
+  </ul>
+  <p>All of this data is deleted when you remove the extension.</p>
+
+  <h2>How the extension works on web pages</h2>
+  <ul>
+    <li><strong>Blocking ads and trackers.</strong> The extension gives Chrome a list of rules (through the <code>declarativeNetRequest</code> API), and Chrome blocks requests to ad and tracking servers. The extension does not see or read your web requests.</li>
+    <li><strong>Hiding empty ad spaces.</strong> On each page, a script reads the site's hostname and the class and id names used on the page, to find the matching hiding rules. This happens inside your browser. Nothing is stored or sent anywhere.</li>
+    <li><strong>YouTube.</strong> On youtube.com, m.youtube.com and music.youtube.com, a script removes ads from the video player's data before the player loads them, hides sponsored cards, and skips any ad that still plays. It does not read or record what you watch.</li>
+  </ul>
+
+  <h2>Network connections</h2>
+  <p>The extension's only network connection is to <a href="https://easylist.to">easylist.to</a>, to download updated copies of the EasyList and EasyPrivacy filter lists about every 4 days. This is a plain file download. It contains no information about you or your browsing. Like any website, easylist.to receives standard connection details such as your IP address when the file is downloaded; its own privacy practices apply to that.</p>
+
+  <h2>Permissions</h2>
+  <ul>
+    <li><code>storage</code>: saves the settings, counters and filter rules listed above, on your device only.</li>
+    <li><code>declarativeNetRequest</code>: lets Chrome block ad and tracking requests using the filter rules.</li>
+    <li><code>alarms</code>: schedules the filter list update every 4 days.</li>
+    <li>Access to websites: needed to hide empty ad spaces on every site and to remove ads on YouTube, as described above.</li>
+  </ul>
+
+  <h2>Third parties</h2>
+  <p>We do not sell, rent, trade or transfer any data to third parties. The extension contains no third-party analytics, advertising or tracking code.</p>
+
+  <h2>Chrome Web Store User Data Policy</h2>
+  <p>The extension's handling of data complies with the <a href="https://developer.chrome.com/docs/webstore/program-policies/">Chrome Web Store User Data Policy</a>, including the Limited Use requirements. Because it collects no user data, no data is used or transferred for any purpose.</p>
+
+  <h2>Children's privacy</h2>
+  <p>The extension collects no data from anyone, including children under 13.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes, the new version will be posted on this page with a new effective date.</p>
+
+  <h2>Contact</h2>
+  <p>If you have any questions about this policy, contact the developer, Milenniumapps, at <a href="mailto:feedbackonapps@gmail.com">feedbackonapps@gmail.com</a>.</p>
+
+  <footer>VidOne Ad Blocker is not affiliated with YouTube or Google. YouTube is a trademark of Google LLC.</footer>
+</main>
+</body>
+</html>
