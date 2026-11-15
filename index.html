@@ -77,6 +77,10 @@
     .hero p { margin-top: 16px; font-size: 18px; color: var(--muted); max-width: 560px; }
 
     .apps { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 20px; padding-bottom: 72px; }
+    .section-title { font-size: clamp(26px, 4vw, 34px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 20px; scroll-margin-top: 20px; }
+    .soon { font-size: 14px; font-weight: 500; background: var(--chip); border-radius: 999px; padding: 8px 14px; }
+    /* Two app cards share a row, so one extension card keeps the same width. */
+    .extensions { grid-template-columns: repeat(auto-fill, minmax(min(420px, 100%), 1fr)); }
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -123,6 +127,7 @@
       <a class="brand" href="/">Milenniumapps</a>
       <nav>
         <a href="#apps">Apps</a>
+        <a href="#extensions">Extensions</a>
         <a href="mailto:feedbackonapps@gmail.com">Contact</a>
       </nav>
     </div>
@@ -187,6 +192,34 @@
       </article>
 
     </section>
+
+    <h2 class="section-title" id="extensions">Extensions</h2>
+    <section class="apps extensions">
+
+      <article class="card">
+        <div class="card-head">
+          <div class="icon"><img src="vidone/icon.webp" alt="VidOne Ad Blocker icon" width="64" height="64" /></div>
+          <div>
+            <h2>VidOne Ad Blocker</h2>
+            <div class="sub">Chrome extension</div>
+          </div>
+        </div>
+        <p>Block ads and trackers on every website. Ad-free YouTube with no video ads, no fake buffering and no wait between videos.</p>
+        <div class="chips">
+          <span class="chip">Free</span>
+          <span class="chip">Chrome</span>
+          <span class="chip">Ad blocker</span>
+          <span class="chip">Privacy</span>
+        </div>
+        <div class="card-foot">
+          <div class="actions">
+            <span class="soon">Coming soon to the Chrome Web Store</span>
+            <a class="link" href="vidone-extension/privacy-policy.html">Privacy policy</a>
+          </div>
+        </div>
+      </article>
+
+    </section>
   </main>
 
   <footer>
@@ -195,6 +228,7 @@
       <span>
         <a href="vidone/privacy-policy.html">VidOne privacy</a> &middot;
         <a href="biblekjv/privacy-policy.html">Bible KJV privacy</a> &middot;
+        <a href="vidone-extension/privacy-policy.html">VidOne Ad Blocker privacy</a> &middot;
         <a href="mailto:feedbackonapps@gmail.com">feedbackonapps@gmail.com</a>
       </span>
     </div>
